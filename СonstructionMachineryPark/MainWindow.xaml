@@ -5,8 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:СonstructionMachineryPark"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Парк строительной техники" Height="900" Width="1350">
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="C:\Users\Vladimir\source\repos\СonstructionMachineryPark\СonstructionMachineryPark\images\mainImage.webp"/>
+        </Grid.Background>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Menu x:Name="mMenuTopBar" Visibility="Hidden"></Menu>
+
+        <Frame x:Name="fFrameCenter" Grid.Row="1" VerticalAlignment="Top"
+               NavigationUIVisibility="Hidden"></Frame>
+
+        <StackPanel x:Name="spServiceMesBottom" Grid.Row="2"></StackPanel>
         
     </Grid>
 </Window>

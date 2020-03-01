@@ -1,0 +1,8 @@
+
+
+Посмотреть все таблицы
+
+SELECT * FROM [dbo].[newEquipment]
+SELECT * FROM [dbo].[TablesLocation]
+SELECT * FROM [dbo].[TablesManufacturer]
+SELECT * FROM [dbo].[TablesModel]

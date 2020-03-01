@@ -13,16 +13,39 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using СonstructionMachineryPark.pages;
+
 namespace СonstructionMachineryPark
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+    /// 
     public partial class MainWindow : Window
     {
+        public static Menu _MenuTopBar = null;
+        public static Frame _FrameCenter = null;
+        public static StackPanel _ServiceMesBottom = null;
+
         public MainWindow()
         {
             InitializeComponent();
+            _MenuTopBar = mMenuTopBar;
+            _FrameCenter = fFrameCenter;
+            _ServiceMesBottom = spServiceMesBottom;
+            _FrameCenter.Navigate(new PageWelcome());
+            this.Loaded += MainWindow_Loaded;
+        }
+
+
+        //Задержка выполнения метода.
+        //На время ожидания не блокирует поток. На время ожидания метод задерживает своё выполнение на заданное время,
+        async void MainWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            await Task.Delay(0000);
+            _FrameCenter.Navigate(null);
+            new MenuTopBar();
+            _MenuTopBar.Visibility = Visibility.Visible;
         }
     }
 }
