@@ -1,4 +1,4 @@
-﻿<Page x:Class="СonstructionMachineryPark.pages.PageEquipment"
+﻿<Page x:Class="СonstructionMachineryPark.pages.PageManufacturer"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -15,7 +15,7 @@
                 <RowDefinition Height="350"></RowDefinition>
             </Grid.RowDefinitions>
 
-            <TextBlock Text="Оборудование"
+            <TextBlock Text="Производитель"
                    FontSize="25"
                    Grid.Row="0"
                    VerticalAlignment="Center"/>
@@ -32,34 +32,18 @@
                                     DisplayMemberBinding="{Binding Path=intManufacturerID}"
                                     Width="150"/>
 
-                        <GridViewColumn Header="intModelID"
-                                    DisplayMemberBinding="{Binding Path=intModelID}"
+                        <GridViewColumn Header="intManufacturerCheckListId"
+                                    DisplayMemberBinding="{Binding Path=intManufacturerCheckListId}"
                                     Width="150"/>
 
-                        <GridViewColumn Header="strManufYear"
-                                    DisplayMemberBinding="{Binding Path=strManufYear}"
-                                    Width="150"/>
-
-                        <GridViewColumn Header="strSerialNo"
-                                    DisplayMemberBinding="{Binding Path=strSerialNo}"
-                                    Width="150"/>
-
-                        <GridViewColumn Header="createDate"
-                                    DisplayMemberBinding="{Binding Path=createDate}"
-                                    Width="150"/>
-
-                        <GridViewColumn Header="intMetered"
-                                    DisplayMemberBinding="{Binding Path=intMetered}"
-                                    Width="150"/>
-
-                        <GridViewColumn Header="lastDate"
-                                    DisplayMemberBinding="{Binding Path=lastDate}"
+                        <GridViewColumn Header="strName"
+                                    DisplayMemberBinding="{Binding Path=strName}"
                                     Width="150"/>
                     </GridView>
                 </ListView.View>
             </ListView>
 
-            <GroupBox Header="Оборудование"
+            <GroupBox Header="Производитель"
                   Grid.Row="2" Margin="0 20 0 0">
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -78,20 +62,13 @@
                     </Grid.RowDefinitions>
 
                     <Label Grid.Row="0" HorizontalAlignment="Right" Content="intManufacturerID"></Label>
-                    <Label Grid.Row="1" HorizontalAlignment="Right" Content="intModelID"></Label>
-                    <Label Grid.Row="2" HorizontalAlignment="Right" Content="strManufYear"></Label>
-                    <Label Grid.Row="3" HorizontalAlignment="Right" Content="strSerialNo"></Label>
-                    <Label Grid.Row="4" HorizontalAlignment="Right" Content="createDate"></Label>
-                    <Label Grid.Row="5" HorizontalAlignment="Right" Content="intMetered"></Label>
-                    <Label Grid.Row="6" HorizontalAlignment="Right" Content="lastDate"></Label>
+                    <Label Grid.Row="1" HorizontalAlignment="Right" Content="intManufacturerCheckListId"></Label>
+                    <Label Grid.Row="2" HorizontalAlignment="Right" Content="strName"></Label>
+
 
                     <TextBox Grid.Row="0" Grid.Column="1" Margin="5" Text= "{Binding Path=intManufacturerID}"></TextBox>
-                    <TextBox Grid.Row="1" Grid.Column="1" Margin="5" Text= "{Binding Path=intModelID}"></TextBox>
-                    <TextBox Grid.Row="2" Grid.Column="1" Margin="5" Text= "{Binding Path=strManufYear}"></TextBox>
-                    <TextBox Grid.Row="3" Grid.Column="1" Margin="5" Text= "{Binding Path=strSerialNo}"></TextBox>
-                    <TextBox Grid.Row="4" Grid.Column="1" Margin="5" Text= "{Binding Path=createDate}"></TextBox>
-                    <TextBox Grid.Row="5" Grid.Column="1" Margin="5" Text= "{Binding Path=intMetered}"></TextBox>
-                    <TextBox Grid.Row="6" Grid.Column="1" Margin="5" Text= "{Binding Path=lastDate}"></TextBox>
+                    <TextBox Grid.Row="1" Grid.Column="1" Margin="5" Text= "{Binding Path=intManufacturerCheckListId}"></TextBox>
+                    <TextBox Grid.Row="2" Grid.Column="1" Margin="5" Text= "{Binding Path=strName}"></TextBox>
 
                     <StackPanel Grid.Row="8" Grid.Column="1" Orientation="Horizontal" 
                                 HorizontalAlignment="Center">

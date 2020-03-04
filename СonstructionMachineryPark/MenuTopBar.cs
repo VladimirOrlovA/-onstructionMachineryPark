@@ -88,12 +88,14 @@ namespace СonstructionMachineryPark
 
         private void Manufacture_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Manufacture форма " + formActionStatus);
+            //MessageBox.Show("Manufacture форма " + formActionStatus);
+            MainWindow._FrameCenter.Navigate(new PageManufacturer());
         }
 
         private void Model_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Model форма " + formActionStatus);
+            //MessageBox.Show("Model форма " + formActionStatus);
+            MainWindow._FrameCenter.Navigate(new PageModel());
         }
 
 

@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 using СonstructionMachineryPark.pages;
+using ConstructionMachineryPark.BAL.DLL;
 
 namespace СonstructionMachineryPark
 {
@@ -35,6 +36,8 @@ namespace СonstructionMachineryPark
             _ServiceMesBottom = spServiceMesBottom;
             _FrameCenter.Navigate(new PageWelcome());
             this.Loaded += MainWindow_Loaded;
+
+            TestOutMes();
         }
 
 
@@ -46,6 +49,15 @@ namespace СonstructionMachineryPark
             _FrameCenter.Navigate(null);
             new MenuTopBar();
             _MenuTopBar.Visibility = Visibility.Visible;
+        }
+
+        public void TestOutMes()
+        {
+            var obj = new Equipment();
+            string objTypeName = obj.GetType().ToString();
+            objTypeName = objTypeName.Substring(objTypeName.LastIndexOf('.') + 1);
+
+            MessageBox.Show(objTypeName);
         }
     }
 }

@@ -5,6 +5,12 @@ VisualStudioVersion = 15.0.28307.1022
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConstructionMachineryPark", "СonstructionMachineryPark\ConstructionMachineryPark.csproj", "{DDD8897A-36D2-4922-B345-8A8EE48E7B87}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConstructionMachineryPark.DAL.DLL", "ConstructionMachineryPark.DAL.DLL\ConstructionMachineryPark.DAL.DLL.csproj", "{62B1244B-E820-4CF4-AF8F-C62539B0ECD3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConstructionMachineryPark.BAL.DLL", "ConstructionMachineryPark.BAL.DLL\ConstructionMachineryPark.BAL.DLL.csproj", "{A4BDF929-710A-4BEF-B86F-432628DAFCDD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConstructionMachineryPark.Console", "ConstructionMachineryPark.Console\ConstructionMachineryPark.Console.csproj", "{CEB21F71-2E7C-453C-A0EE-FB8D9C557F54}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +21,18 @@ Global
 		{DDD8897A-36D2-4922-B345-8A8EE48E7B87}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DDD8897A-36D2-4922-B345-8A8EE48E7B87}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DDD8897A-36D2-4922-B345-8A8EE48E7B87}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62B1244B-E820-4CF4-AF8F-C62539B0ECD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62B1244B-E820-4CF4-AF8F-C62539B0ECD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62B1244B-E820-4CF4-AF8F-C62539B0ECD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62B1244B-E820-4CF4-AF8F-C62539B0ECD3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4BDF929-710A-4BEF-B86F-432628DAFCDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4BDF929-710A-4BEF-B86F-432628DAFCDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4BDF929-710A-4BEF-B86F-432628DAFCDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4BDF929-710A-4BEF-B86F-432628DAFCDD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEB21F71-2E7C-453C-A0EE-FB8D9C557F54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEB21F71-2E7C-453C-A0EE-FB8D9C557F54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEB21F71-2E7C-453C-A0EE-FB8D9C557F54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEB21F71-2E7C-453C-A0EE-FB8D9C557F54}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
