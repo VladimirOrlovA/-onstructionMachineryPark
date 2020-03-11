@@ -13,19 +13,19 @@ namespace ConstructionMachineryPark.Console
     {
         static void Main(string[] args)
         {
-            //var db = new DataBaseContext<Equipment>();
 
-            ////Equipment obj = db.GetOne("Equipment", 37);
+            var db = new DataBaseContext<Equipment>();
 
-            //var objects = db.GetAll();
+            //var list = db.GetAll("Equipment");
 
-            //string str = objects[0].strManufYear;
+            //foreach (var item in list)
+            //{
+            //    System.Console.WriteLine(item.strSerialNo);
+            //}
 
-            //System.Console.WriteLine(str);
-            //System.Console.WriteLine("dddddddddddddd");
+            //var oneObj = db.GetOne("Equipment", "intEquipmentID", "37");
 
-            var db = new ConnDataBaseSQL();
-            db.ReadData();
+            //System.Console.WriteLine(oneObj.strSerialNo);
 
             System.Console.ReadKey();
         }
