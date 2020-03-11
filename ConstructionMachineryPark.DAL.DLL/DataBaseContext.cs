@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.Reflection;
 using Dapper;
 
 using ConstructionMachineryPark.BAL.DLL;
 
 namespace ConstructionMachineryPark.DAL.DLL
 {
-    public class DataBaseContext<T> where T:class
+    public class DataBaseContext<T> where T : class
     {
         private static string connectionString = ConfigurationManager.ConnectionStrings["ConnectionDB"].ConnectionString;
 
@@ -24,22 +25,45 @@ namespace ConstructionMachineryPark.DAL.DLL
 
         private string GetTableName(T obj)
         {
+            // var1
             // название типа объекта совпадает с названием таблицы в БД
-            string objTypeName = obj.GetType().ToString();
-            return objTypeName.Substring(objTypeName.LastIndexOf('.') + 1);
+            //string objTypeName = obj.GetType().ToString();
+            //return objTypeName.Substring(objTypeName.LastIndexOf('.') + 1);
+
+            //var2
+            Type type = obj.GetType();
+            return type.Name;
+
         }
 
         public bool Create(T obj)
         {
 
 
-            string sql = $"INSERT INTO {GetTableName(obj)}";
+            // определяем тип полученного объекта
+            Type objType = obj.GetType();
+            // получаем массив атрибутов свойств полученного объекта
+            PropertyInfo[] properties = objType.GetProperties();
+
+
+            string tableName = GetTableName(obj);
+            string fieldNames = "";
+            string fieldValues = "";
+
+            foreach (var property in properties)
+            {
+                fieldValues += "@" + property.Name + ", ";
+            }
+            fieldValues = fieldValues.Remove(fieldValues.Length - 2);
+            fieldNames = fieldValues.Replace("@", "");
+
+            string query = $"INSERT INTO {tableName} ({fieldNames}) VALUES ({fieldValues})";
+
             try
             {
-
-                using(IDbConnection db = new SqlConnection(connectionString))
+                using (IDbConnection db = new SqlConnection(connectionString))
                 {
-                    
+                    var identity = db.Execute(query, obj);
                 }
                 return true;
             }
@@ -47,7 +71,7 @@ namespace ConstructionMachineryPark.DAL.DLL
             {
                 return false;
             }
-            
+
         }
 
         public List<T> GetAll(string tableName)
@@ -74,7 +98,7 @@ namespace ConstructionMachineryPark.DAL.DLL
                 {
                     obj = db.Query<T>(query).FirstOrDefault();
                 }
-                
+
                 return obj;
             }
             catch
@@ -89,9 +113,24 @@ namespace ConstructionMachineryPark.DAL.DLL
             return true;
         }
 
-        public bool Delete(int id)
+        public bool Delete(string tableName, string fieldName, string value)
         {
-            return true;
+            T obj = null;
+            string query = $"SELECT * FROM {tableName} WHERE {fieldName} = {value}";
+
+            try
+            {
+                using (IDbConnection db = new SqlConnection(connectionString))
+                {
+                    obj = db.Query<T>(query).FirstOrDefault();
+                }
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 

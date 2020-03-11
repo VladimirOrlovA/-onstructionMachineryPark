@@ -27,6 +27,18 @@ namespace ConstructionMachineryPark.Console
 
             //System.Console.WriteLine(oneObj.strSerialNo);
 
+            Equipment equipment = new Equipment();
+
+            equipment.intManufacturerID = 777;
+            equipment.intModelID = 777;
+            equipment.strManufYear = DateTime.Now.Year.ToString();
+            equipment.strSerialNo = "blablabla";
+            equipment.createDate = DateTime.Now; 
+            equipment.intMetered = 777;
+            equipment.lastDate = DateTime.Now;
+
+            db.Create(equipment);
+
             System.Console.ReadKey();
         }
     }
